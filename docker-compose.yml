@@ -7,6 +7,7 @@ services:
     tty: true
     environment:
       - PROJECT_ID=
+      - GOOGLE_APPLICATION_CREDENTIALS=/home/serviceAccount.json
     ports:
       - 8080:8000
     volumes:

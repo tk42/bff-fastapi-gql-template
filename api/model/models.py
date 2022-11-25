@@ -3,7 +3,7 @@ from enum import Enum
 from typing import Optional
 from datetime import datetime
 from dataclasses import dataclass, field, asdict
-from bq_schema import BigqueryTable
+from bq_schema.bigquery_table import BigqueryTable
 
 
 class Status(Enum):

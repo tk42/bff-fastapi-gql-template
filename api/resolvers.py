@@ -1,11 +1,11 @@
 import strawberry
 
 from api.model.inputs import AddTaskInput, UpdateTaskInput
-from api.repo.surrealdb import SurrealDBRepository
+from api.repo.bigquery import BigQueryRepository
 from api.service.services import TaskService
 from api.model.types import TaskType
 
-db = SurrealDBRepository("tasks", "tasks")
+db = BigQueryRepository("tasks", "tasks")
 
 
 async def get_task(id: strawberry.ID) -> TaskType:
