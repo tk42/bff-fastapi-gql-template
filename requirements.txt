@@ -2,3 +2,4 @@ uvicorn
 fastapi
 strawberry-graphql[debug-server]
 surrealdb
+bq_schema

@@ -1,9 +1,9 @@
 import uuid
-import json
 from enum import Enum
 from typing import Optional
 from datetime import datetime
 from dataclasses import dataclass, field, asdict
+from bq_schema import BigqueryTable
 
 
 class Status(Enum):
@@ -24,3 +24,8 @@ class Task:
 
     def __dict__(self):
         return {k: str(v) for k, v in asdict(self).items()}
+
+
+class TaskTable(BigqueryTable):
+    name = "tasks"
+    schema = Task
