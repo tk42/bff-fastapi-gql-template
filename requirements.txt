@@ -1,7 +1,9 @@
 uvicorn
+asyncpg
 fastapi
+SQLAlchemy
 strawberry-graphql[debug-server]
-surrealdb
-bq_schema
-google-cloud-bigquery
+# surrealdb
+# bq_schema
+# google-cloud-bigquery
 pytz

@@ -1,8 +1,6 @@
-from typing import Optional
-
 import strawberry
-
-from .types import StatusType
+from typing import Optional
+from api.model.types import StatusType
 
 
 @strawberry.input

@@ -1,7 +1,7 @@
 # strawberry-surrealdb-template
  :snake: Python based
  :strawberry: Strawberry based 
- :seedling: SurrealDB
+ :seedling: Postgres
  :broom: CleanArchitecture
 
 ## Quickstart

@@ -1,9 +1,10 @@
-import uuid
 from enum import Enum
 from typing import Optional
 from datetime import datetime
+from api.repo.postgres.db import Base
+from pydantic import BaseModel
+from sqlalchemy import Column, Integer, String
 from dataclasses import dataclass, field, asdict
-from bq_schema.bigquery_table import BigqueryTable
 
 
 class Status(Enum):
@@ -13,10 +14,11 @@ class Status(Enum):
 
 
 @dataclass
-class Task:
-    title: str
-    # CAUTION: field 'id' could be overwritten by SurrealDB
-    task_id: uuid.UUID = field(default_factory=uuid.uuid4)
+class Task(Base, BaseModel):
+    __tablename__ = "tasks"
+
+    task_id = Column(Integer, primary_key=True)
+    title = Column(String(1024))
     description: Optional[str] = None
     status: Status = Status.TODO
     created_at: datetime = field(default_factory=datetime.utcnow)
@@ -25,7 +27,9 @@ class Task:
     def __dict__(self):
         return {k: str(v) for k, v in asdict(self).items()}
 
+    class Config:
+        orm_mode = True
 
-class TaskTable(BigqueryTable):
-    name = "tasks"
-    schema = Task
+
+class TaskCreate(Task):
+    pass

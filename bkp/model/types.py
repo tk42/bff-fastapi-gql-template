@@ -1,9 +1,7 @@
+import strawberry
 from datetime import datetime
 from typing import Optional
-
-import strawberry
-
-from .models import Status, Task
+from api.model.models import Status, Task
 
 StatusType = strawberry.enum(Status, name="Status")
 
