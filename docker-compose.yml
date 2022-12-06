@@ -10,6 +10,8 @@ services:
       - db
     env_file:
       - .env
+    # environment:
+    #   - POPULATE=1
     volumes:
       - .:/app:rw
 
