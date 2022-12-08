@@ -26,10 +26,5 @@ def application():
 
 
 if __name__ == "__main__":
-    if os.environ.get("POPULATE"):
-        print("Populating database...")
-        asyncio.run(create_tables(engine))
-        print("Database populated.")
-
     print("Starting server...")
     uvicorn.run("main:application", host=settings.HOST_URL, port=settings.HOST_PORT, reload=True)

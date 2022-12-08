@@ -12,6 +12,7 @@ services:
       - .env
     volumes:
       - .:/home
+    command: bash
 
   db:
     image: postgres:latest

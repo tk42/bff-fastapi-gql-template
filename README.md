@@ -8,7 +8,29 @@
 ```
 docker compose up
 ```
-To populate the db, set POPULATE=1 in docker-compose.yml
+
+## Migration
+```
+docker-compose -f docker-compose.migration.yml up
+docker exec -it bff-python-template-api-1 bash
+```
+
+To create a new version (for example, "create tables"), 
+```
+$ alembic revision --autogenerate -m "create tables"
+```
+To check where we are
+```
+alembic current
+```
+To upgrade head / +1
+```
+alembic upgrade head/+1
+```
+To downgrade base / -1
+```
+alembic downgrade base/-1
+```
 
 
 ## Reference
