@@ -35,3 +35,4 @@ alembic downgrade base/-1
 
 ## Reference
  - [PythonのGraphQLライブラリStrawberryを使ってみた](https://qiita.com/nttpc-aiyo/items/bb946b864e67c2da9a53)
+ - [DBマイグレーションツールのAlembicの使い方](https://zenn.dev/shimakaze_soft/articles/4c0784d9a87751)
