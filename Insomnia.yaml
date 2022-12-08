@@ -1,0 +1,253 @@
+_type: export
+__export_format: 4
+__export_date: 2022-12-08T03:18:22.059Z
+__export_source: insomnia.desktop.app:v2022.6.0
+resources:
+  - _id: req_bbfb544aa3ec43078da6c6c91f64da46
+    parentId: fld_ce80f96e0fab43ef9050c4482e94cb25
+    modified: 1670469457518
+    created: 1670469090836
+    url: http://localhost:8080/graphql
+    name: GetStickyNotes
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query {\n\tstickynotes
+        {\n\t\tid\n\t\tuserId\n\t\ttext\n\t\tcreatedDatetime\n\t}\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1670469090836
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_ce80f96e0fab43ef9050c4482e94cb25
+    parentId: wrk_9a1ffc434f404bcf8777567c35a92828
+    modified: 1670469180459
+    created: 1670469180459
+    name: StickyNote
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1670469180459
+    _type: request_group
+  - _id: wrk_9a1ffc434f404bcf8777567c35a92828
+    parentId: null
+    modified: 1670469471571
+    created: 1670224061668
+    name: bff-python-template
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_58d21dd8f63b4342ae9c2c95cbb3b8ca
+    parentId: fld_ce80f96e0fab43ef9050c4482e94cb25
+    modified: 1670469446966
+    created: 1670469191357
+    url: http://localhost:8080/graphql
+    name: AddStickyNote
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n\taddStickynotes(\n\t\tuserId: 4,\n\t\ttext:
+        \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\"\n\t)
+        {\n\t\t__typename\n\t\t... on StickyNotes
+        {\n\t\t\tid\n\t\t\tuserId\n\t\t\ttext\n\t\t\tcreatedDatetime\n\t\t}\n\t\t...
+        on UserNotFound {\n\t\t\tmessage\n\t\t}\n\t\t... on UserNameMissing
+        {\n\t\t\tmessage\n\t\t}\n\t}\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1670381354748
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_78bcf5b46b804eba89ec76680b85f58d
+    parentId: fld_ce80f96e0fab43ef9050c4482e94cb25
+    modified: 1670469389601
+    created: 1670469342598
+    url: http://localhost:8080/graphql
+    name: UpdateStickyNote
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n\tupdateStickynote(\n\t\tstickynoteId:
+        2,\n\t\ttext: \"Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit.\"\n\t) {\n\t\t__typename\n\t\t... on StickyNotes
+        {\n\t\t\tid\n\t\t\tuserId\n\t\t\ttext\n\t\t\tcreatedDatetime\n\t\t}\n\t\t...
+        on StickyNotesNotFound {\n\t\t\tmessage\n\t\t}\n\t}\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1670359420726
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_daf6e139feb04f968cf4752b3019d341
+    parentId: fld_ce80f96e0fab43ef9050c4482e94cb25
+    modified: 1670469446231
+    created: 1670469327999
+    url: http://localhost:8080/graphql
+    name: DeleteStickyNote
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n\tdeleteStickynote(\n\t\tstickynoteId: 1,\n\t)
+        {\n\t\t__typename\n\t\t... on StickyNotesDeleted
+        {\n\t\t\tmessage\n\t\t}\n\t\t... on StickyNotesNotFound
+        {\n\t\t\tmessage\n\t\t}\n\t}\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1670337486704
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d97d4f6cd40b4c048cd8f3620e522818
+    parentId: fld_e8bbada52d4745e1b12175b791b817cc
+    modified: 1670469329337
+    created: 1670224073455
+    url: http://localhost:8080/graphql
+    name: GetUsers
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query {\n\tusers {\n\t\tid\n\t\tname\n\t\tstickynotes
+        {\n\t\t\tid\n\t\t\tuserId\n\t\t\ttext\n\t\t\tcreatedDatetime\n\t\t}\n\t}\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1670293618660
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_e8bbada52d4745e1b12175b791b817cc
+    parentId: wrk_9a1ffc434f404bcf8777567c35a92828
+    modified: 1670469076084
+    created: 1670469076084
+    name: User
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1670469076084
+    _type: request_group
+  - _id: req_7927c55a15454218b76d5c28aa198f71
+    parentId: fld_e8bbada52d4745e1b12175b791b817cc
+    modified: 1670469267774
+    created: 1670293618610
+    url: http://localhost:8080/graphql
+    name: AddUser
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n\taddUser(name: \"tk\") {\n\t\t__typename\n\t\t...
+        on AddUser {\n\t\t\tid\n      name\n    }\n    ... on UserExists
+        {\n\t\t\tmessage\n    }\n\t}\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1670293618610
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c70b1d044f9943fe80d5c3988d3fba2a
+    parentId: fld_e8bbada52d4745e1b12175b791b817cc
+    modified: 1670469453831
+    created: 1670468978328
+    url: http://localhost:8080/graphql
+    name: DeleteUser
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"mutation {\n\tdeleteUser(userId: 2) {\n\t\t__typename\n\t\t...
+        on UserDeleted {\n\t\t\tmessage\n    }\n    ... on UserNotFound
+        {\n\t\t\tmessage\n    }\n\t\t... on UserIdMissing
+        {\n\t\t\tmessage\n\t\t}\n\t}\n}"}'
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1670293618560
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_a320379b42cfcd9043110128e8d0d673abdd3a8b
+    parentId: wrk_9a1ffc434f404bcf8777567c35a92828
+    modified: 1670224061673
+    created: 1670224061673
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1670224061673
+    _type: environment
+  - _id: jar_a320379b42cfcd9043110128e8d0d673abdd3a8b
+    parentId: wrk_9a1ffc434f404bcf8777567c35a92828
+    modified: 1670224061673
+    created: 1670224061673
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_3e0e4f90b196418fadfb392e87baa784
+    parentId: wrk_9a1ffc434f404bcf8777567c35a92828
+    modified: 1670224061669
+    created: 1670224061669
+    fileName: boilarplate
+    contents: ""
+    contentType: yaml
+    _type: api_spec
